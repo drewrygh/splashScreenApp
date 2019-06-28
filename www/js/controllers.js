@@ -1,6 +1,13 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
+.controller('DashCtrl', function($scope, $timeout) {
+
+  $timeout(function() {
+    if (navigator && navigator.splashscreen)
+      navigator.splashscreen.hide();
+  }, 10000);
+
+})
 
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
